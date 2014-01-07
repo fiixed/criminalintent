@@ -29,6 +29,7 @@ public class CrimeFragment extends Fragment {
     private static final int REQUEST_DATE = 0;
 
 
+
     Crime mCrime;
     EditText mTitleField;
     Button mDateButton;
@@ -86,6 +87,8 @@ public class CrimeFragment extends Fragment {
 
             }
         });
+
+
 
         mSolvedCheckBox = (CheckBox) v.findViewById(R.id.crime_solved);
         mSolvedCheckBox.setChecked(mCrime.isSolved());
