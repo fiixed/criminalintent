@@ -43,10 +43,13 @@ public class CrimeListFragment extends ListFragment {
         mSubtitleVisible = false;
     }
 
+
+
     @TargetApi(11)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = super.onCreateView(inflater, container, savedInstanceState);
+        View v = inflater.inflate(R.layout.list_all_crimes, container, false);
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
             if(mSubtitleVisible) {
                 getActivity().getActionBar().setSubtitle(R.string.subtitle);
@@ -114,6 +117,8 @@ public class CrimeListFragment extends ListFragment {
         public CrimeAdapter(ArrayList<Crime> crimes) {
             super(getActivity(), 0, crimes);
         }
+
+
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
