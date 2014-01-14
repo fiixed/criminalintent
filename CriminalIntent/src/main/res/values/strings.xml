@@ -15,6 +15,7 @@
     <string name ="delete_crime">Delete</string>
     <string name="add_crime">Add Crime</string>
     <string name="empty_crime_list">There are no current crimes</string>
+    <string name="take">Take!</string>
 
 
 
