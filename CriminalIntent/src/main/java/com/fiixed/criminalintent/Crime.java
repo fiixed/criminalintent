@@ -16,12 +16,14 @@ public class Crime {
     private static final String JSON_SOLVED = "solved";
     private static final String JSON_DATE = "date";
     private static final String JSON_PHOTO = "photo";
+    private static final String JSON_SUSPECT = "suspect";
 
     private UUID mId;
     private String mTitle;
     private Date mDate = new Date();
     private Photo mPhoto;
     private boolean mSolved;
+    private String mSuspect;
 
     public Crime() {
         // Generate unique identifier
@@ -37,6 +39,9 @@ public class Crime {
         if (json.has(JSON_PHOTO)) {
             mPhoto = new Photo(json.getJSONObject(JSON_PHOTO));
         }
+        if(json.has(JSON_SUSPECT)) {
+            mSuspect = json.getString(JSON_SUSPECT);
+        }
 
     }
 
@@ -48,6 +53,10 @@ public class Crime {
         json.put(JSON_SOLVED, mSolved);
         if (mPhoto != null) {
             json.put(JSON_PHOTO, mPhoto.toJSON());
+
+        }
+        if(mSuspect != null) {
+            json.put(JSON_SUSPECT, mSuspect);
         }
         return json;
     }
@@ -86,6 +95,14 @@ public class Crime {
 
     public void setPhoto(Photo p) {
         mPhoto = p;
+    }
+
+    public String getSuspect() {
+        return mSuspect;
+    }
+
+    public void setSuspect(String suspect) {
+        mSuspect = suspect;
     }
 
     @Override
